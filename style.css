@@ -229,8 +229,20 @@ blockquote::before {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-card {
@@ -240,12 +252,6 @@ blockquote::before {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     text-align: center;
     border-bottom: 4px solid transparent;
-    transition: var(--transition);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-color);
 }
 
 .service-icon {

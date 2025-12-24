@@ -38,4 +38,24 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
+    // Email Obfuscation Protection
+    // Assemble email: brandenstein [at] posteo.de
+    const user = 'brandenstein';
+    const domain = 'posteo.de';
+    const email = `${user}@${domain}`;
+    
+    document.querySelectorAll('.protected-email').forEach(el => {
+        // Set the visible text if it's empty or needs replacing
+        if (el.textContent === '' || el.textContent.includes('(at)')) {
+            el.textContent = email;
+        }
+        
+        // Wrap in a link if requested
+        if (el.dataset.mailto === 'true') {
+            el.style.cursor = 'pointer';
+            el.addEventListener('click', (e) => {
+                window.location.href = `mailto:${email}`;
+            });
+        }
+    });
 });
