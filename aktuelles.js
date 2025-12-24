@@ -1,10 +1,5 @@
 const newsData = [
-    {
-        "datum": "25.06.2024",
-        "titel": "Testeintrag",
-        "text": "Das ist ein Testeintrag.",
-        "bild": ""
-    },
+    // Testeintrag entfernt
         // Entry removed
     {
         "datum": "24.12.2025",
